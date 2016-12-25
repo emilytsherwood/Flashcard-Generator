@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/emilytsherwood/Flashcard-Generator#readme",
   "dependencies": {
-    "inquirer": "^2.0.0"
+    "inquirer": "^2.0.0",
+    "prompt": "^1.0.0"
   }
 }
