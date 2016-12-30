@@ -1,4 +1,6 @@
 var prompt = require('prompt');
+var studentOne = [];
+var inquirer = require('inquirer');
 
 function Basic(question, answer){
 	this.question = question;
@@ -7,10 +9,20 @@ function Basic(question, answer){
 
 prompt.start();
 
+function flashcard() {
 prompt.get(['question', 'answer'], function(err, result) {
 	console.log('question: ' + result.question);
 	console.log('answer: ' + result.answer);
+	studentOne.push(result.question, result.answer);
+	console.log(studentOne);
+
+var newStudent = new Basic(result.question, result.answer); 
+	// var studentOne = new Basic(result.question, result.answer);
 });
+}
+
+flashcard();
+
 
 // Basic.prototype.getBasic = function(){
 // 	return this.question;
@@ -29,28 +41,24 @@ prompt.get(['question', 'answer'], function(err, result) {
 // 	this.answer = answer;
 // }
 
-// BasicFlashcard.prototype.printInfo = function(){
-// 	console.log("Questions: " + this.question + "\nAnswer: " + this.answer);
+// Basic.prototype.printInfo = function(){
+// 	console.log("Front: " + this.question + "\nBack: " + this.answer);
 // };
 
 // var askQuestion = function(){
 // 	inquirer.prompt([
 // 	{
 // 		type: 'input',
-// 		name: 'question_one',
-// 		message: firstQuestion,
+// 		name: 'front',
+// 		message: 'Type the front of your flashcard'
 // 	},
 // 	{
-// 	// 	type: 'input',
-// 	// 	name: 'question_two',
-// 	// 	message: 'What is the most recent territory in Canada called?',
-// 	// },
-// 	// {
-// 	// 	type: 'input',
-// 	// 	name: 'question_three',
-// 	// 	message: 'How many national languages does Canada have?',
-// 	// }]).then(function(answers){
-// }]);
-// };
+// 		type: 'input',
+// 		name: 'back',
+// 		message: 'Type the back of your flashcard'
+// 	}]).then(function(answers){
 
-
+// 		var newStudent = new Basic(answers.front, answers.back);
+// 		newStudent.printInfo();
+// 	askQuestion();
+// });
