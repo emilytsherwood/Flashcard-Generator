@@ -1,27 +1,31 @@
-var prompt = require('prompt');
-var studentOne = [];
-var inquirer = require('inquirer');
+// var prompt = require('prompt');
+// var studentOne = [];
+// var inquirer = require('inquirer');
 
 function Basic(question, answer){
 	this.question = question;
 	this.answer = answer;
+	this.print = function() {
+		console.log('question: ' + this.question);
+		console.log('answer: ' + this.question);
+	};
 }
 
-prompt.start();
+// prompt.start();
 
-function flashcard() {
-prompt.get(['question', 'answer'], function(err, result) {
-	console.log('question: ' + result.question);
-	console.log('answer: ' + result.answer);
-	studentOne.push(result.question, result.answer);
-	console.log(studentOne);
+// function flashcard() {
+// prompt.get(['question', 'answer'], function(err, result) {
+// 	console.log('question: ' + result.question);
+// 	console.log('answer: ' + result.answer);
+// 	studentOne.push(result.question, result.answer);
+// 	console.log(studentOne);
 
-var newStudent = new Basic(result.question, result.answer); 
-	// var studentOne = new Basic(result.question, result.answer);
-});
-}
+// var newStudent = new Basic(result.question, result.answer); 
+// 	// var studentOne = new Basic(result.question, result.answer);
+// });
+// }
 
-flashcard();
+// flashcard();
 
 
 // Basic.prototype.getBasic = function(){
